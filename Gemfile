@@ -1,10 +1,12 @@
 source "http://rubygems.org"
-gem 'spree', '~> 3.0.0.rc2'
-gem 'sass-rails', '~> 4.0.3'
+gem 'spree', '~> 3.3.0.rc1'
+gem 'sass-rails', '~> 5.0'
 
 # Spree Internationalization https://github.com/spree/spree_i18n
 gem 'spree_i18n', github: 'spree/spree_i18n', branch: 'master'
 gem 'globalize', github: 'globalize/globalize', branch: 'master'
+
+gem 'json', '>= 1.8'
 
 group :test, :development do
   gem 'rspec-rails', '~> 3.1.0'
@@ -15,7 +17,7 @@ group :test, :development do
   gem 'spork'
   gem 'poltergeist'
   gem 'selenium-webdriver'
-  gem 'capybara-webkit'
+  gem 'capybara-webkit', '~> 1.14.0'
   gem 'capybara'
   gem 'vcr'
 end
