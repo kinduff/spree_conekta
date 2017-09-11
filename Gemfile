@@ -3,8 +3,8 @@ gem 'spree', '~> 3.3.0.rc1'
 gem 'sass-rails', '~> 5.0'
 
 # Spree Internationalization https://github.com/spree/spree_i18n
-gem 'spree_i18n', github: 'spree/spree_i18n', branch: 'master'
 gem 'globalize', github: 'globalize/globalize', branch: 'master'
+gem 'spree_i18n', github: 'spree/spree_i18n', branch: 'master'
 
 gem 'json', '>= 1.8'
 
