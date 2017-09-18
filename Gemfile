@@ -1,10 +1,9 @@
 source "http://rubygems.org"
-gem 'spree', '~> 3.0.0.rc2'
+gem 'spree', '~> 3.0.0'
 gem 'sass-rails', '~> 4.0.3'
 
 # Spree Internationalization https://github.com/spree/spree_i18n
-gem 'spree_i18n', github: 'spree/spree_i18n', branch: 'master'
-gem 'globalize', github: 'globalize/globalize', branch: 'master'
+gem 'spree_i18n', github: 'spree/spree_i18n', branch: '3-0-stable'
 
 group :test, :development do
   gem 'rspec-rails', '~> 3.1.0'
