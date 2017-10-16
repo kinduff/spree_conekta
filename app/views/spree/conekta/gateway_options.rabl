@@ -1,5 +1,6 @@
 object @order
 
+node(:locale)       { 'es' }
 node(:description)  { 'Spree Order' }
 node(:amount)       { |order| order.display_total.cents }
 node(:currency)     { Spree::Config[:currency] }
