@@ -1,28 +1,20 @@
-<h1><%= t('conekta.spei.payment_title') %></h1>
+<p><img src='http://ccolon.org.mx/wp-content/uploads/2015/11/header.png' /></p>
 
-<table id='conekta_spei' class='payment-information'>
-  <thead>
-    <tr>
-      <th colspan='2'> <%= t('conekta.order_number', number: @order.number) %> </th>
-    </tr>
-    <tr>
-      <th> <%= t('conekta.spei.clabe') %> </th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td colspan='2'> <%= raw t('conekta.spei.payment_message') %> </td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td class='align-center'> <%= @order_details['payment_method']['receiving_account_number'] %> </td>
-    </tr>
-    <tr>
-      <td class='align-right' colspan='2'>
+<h4><%= t("conekta.spei.payment_title") %></h4>
+
+<div id='conekta_spei'>
+    <p><%= t('spree.order_number', number: @order.number) %></p>
+    <p><%= raw t('conekta.spei.payment_message') %></p>
+    <p>
+      <b><%= t('conekta.spei.clabe') %>: </b>
+      <%= @order_details['payment_method']['receiving_account_number'] %>
+    </p>
+    <p>
         <b><%= t('conekta.total') %></b>
-        <%= @order.display_total.to_html %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <% if @order.currency != 'MXN' %>
+          <%= Spree::Conekta::Exchange.new(@order.total, @order.currency).amount_exchanged  %> MXN
+        <% else %>
+          <%= @order.display_total.to_html%>
+        <% end%>
+    </p>
+</div>

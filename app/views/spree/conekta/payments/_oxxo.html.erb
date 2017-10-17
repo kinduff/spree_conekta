@@ -1,36 +1,18 @@
-<img class='conekta-oxxo' src='https://s3.amazonaws.com/pagalo/oxxo_logo.png'></img>
-<h1 id='oxxo-title'><%= t("conekta.oxxo.payment_title") %></h1>
+<p><img src='https://s3.amazonaws.com/pagalo/oxxo_logo.png' width="100px" /></p>
 
-<table id='conekta_oxxo' class='payment-information'>
-  <thead>
-    <tr>
-      <th colspan='2'> <%= t('conekta.order_number', number: @order.number) %> </th>
-    </tr>
-    <tr>
-      <th colspan='2'> <%= t('conekta.oxxo.bar_code') %> </th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td colspan='2'> <%= raw t('conekta.oxxo.payment_message') %> </td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td class='align-center' id='barcode'>
-        <%= image_tag(@order_details['payment_method']['barcode_url']) %>
-        <div><%= @order_details['payment_method']['barcode'] %></div>
-      </td>
-    </tr>
-    <tr>
-      <td class='align-right'>
+<h4><%= t("conekta.oxxo.payment_title") %></h4>
+
+<div id='conekta_oxxo'>
+    <p><%= t('spree.order_number', number: @order.number) %></p>
+    <p><%= raw t('conekta.oxxo.payment_message') %></p>
+    <p><%= image_tag(@order_details['payment_method']['barcode_url']) %></p>
+    <p><%= @order_details['payment_method']['barcode'] %></p>
+    <p>
         <b><%= t('conekta.total') %></b>
         <% if @order.currency != 'MXN' %>
           <%= Spree::Conekta::Exchange.new(@order.total, @order.currency).amount_exchanged  %> MXN
         <% else %>
           <%= @order.display_total.to_html%>
         <% end%>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    </p>
+</div>

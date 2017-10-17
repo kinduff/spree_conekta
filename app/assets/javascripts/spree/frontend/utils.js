@@ -29,7 +29,7 @@ spreeConekta.Utils = (function(){
 function printDoc(printable) {
   printer = new spreeConekta.Utils({
     printable: $(printable),
-    options: { loadCSS: "<%= asset_path('spree/backend/print.css.sass') %>" }
+    options: { }
   });
   printer.print();
 };

@@ -1,23 +1,15 @@
-<section id='order-payment'>
-  <header class='order-title'>
-    <div class='logos'>
-      <img class='conekta-brand' src='https://s3.amazonaws.com/conekta/v5/img/conekta-brand.png' alt='Conekta'></img>
+<div class="container" id="printable">
+  <div class="panel panel-default text-center">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t('conekta.title') %></h3>
     </div>
-    <h2 class='payment-title'><%= t('conekta.title') %></h2>
-  </header>
-  <div class='order-body'>
-    <%= render partial: @order.last_payment_source %>
+    <div class="panel-body text-center">
+      <%= render partial: @order.last_payment_source %>
+    </div>
+    <div class="panel-footer">
+      <%= button_tag t('conekta.print_payment_form'), id: 'print-payment', class: 'icon-print'  %>
+    </div>
   </div>
-  <footer class='order-footer'>
-    <%= button_tag t('conekta.print_payment_form'), id: 'print-payment', class: 'icon-print'  %>
-  </footer>
-</section>
+</div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#print-payment').click(function(){
-        window.print();
-    });
-
-  });
-</script>
+<%= render partial: 'print_script.js' %>
