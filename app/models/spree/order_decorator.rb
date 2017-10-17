@@ -7,7 +7,6 @@ module Spree
     Spree::Conekta::PaymentSource::Card
     Spree::Conekta::PaymentSource::Bank
     Spree::Conekta::PaymentSource::Cash
-    Spree::Conekta::PaymentSource::Spei
 
     def last_payment_details
       YAML.load payments.last.log_entries.last.details
