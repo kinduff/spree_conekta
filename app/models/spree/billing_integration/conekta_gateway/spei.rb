@@ -1,5 +1,5 @@
 module Spree
-  class BillingIntegration::ConektaGateway::Bank < Gateway
+  class BillingIntegration::ConektaGateway::Spei < Gateway
     preference :auth_token, :string
     preference :source_method, :string, default: 'spei'
 
